@@ -1,0 +1,2 @@
+cert_dir: "{{ lookup('env','TMPDIR') | default('/tmp',true)  }}"
+cert_overwrite: no

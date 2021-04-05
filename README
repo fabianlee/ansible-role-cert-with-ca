@@ -1,0 +1,5 @@
+
+Creates certificate with custom CA
+
+See tests/playbook_cert.yml for usage
+

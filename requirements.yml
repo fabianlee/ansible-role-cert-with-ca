@@ -1,0 +1,7 @@
+# takes a few minutes to install...
+# ansible-galaxy collection install -r requirements.yml -p . -vvvv
+---
+collections:
+  - name: community.crypto
+    type: galaxy
+    #source: https://galaxy.ansible.com

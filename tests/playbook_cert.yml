@@ -1,0 +1,27 @@
+---
+# install dependency manually:
+# ansible-galaxy collection install community.crypto -vvvv
+# install dependency using requirements.yml
+# ansible-galaxy collection install -r ../requirements.yml -p . -vvvvv
+#
+# run playbook:
+# ansible-playbook playbook_cert.yml --connection=local
+
+- hosts: localhost
+  connection: local
+  gather_facts: yes
+  become: yes
+
+  vars:
+    # custom CA, leaving undefined will create self-signed cert
+    cert_domain_ca: myCA.foo
+    # cert CN
+    cert_domain_cn: primary.foo
+    # cert SAN names (subject alternative names)
+    cert_domains_san: ['secondary.foo','last.foo']
+
+    # overwrite existing certs?
+    #cert_overwrite: yes
+
+  roles:
+    - role: ansible-role-cert-with-ca
