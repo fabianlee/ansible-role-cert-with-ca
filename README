@@ -3,3 +3,5 @@ Creates certificate with custom CA
 
 See tests/playbook_cert.yml for usage
 
+supporting blog: https://fabianlee.org/2021/04/05/ansible-creating-san-certificates-with-a-custom-root-ca/
+
