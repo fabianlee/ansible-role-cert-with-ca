@@ -1,8 +1,5 @@
 # dependency on: ansible-galaxy collection install community.crypto
 # needs PyOpenSSL or cryptogrphy
-#
-# https://milliams.com/posts/2020/ansible-certificate-authority/
-#
 ---
 
 - name: create CA cert, but only if CA defined
