@@ -10,6 +10,15 @@
   community.crypto.openssl_csr:
     path: "{{cert_dir}}/{{cert_domain_ca}}.csr"
     privatekey_path: "{{ ca_key.filename }}"
+    # constraints and usage required by CA
+    basic_constraints_critical: true
+    basic_constraints:
+      - CA:TRUE
+      - pathlen:0
+    key_usage:
+      - digitalSignature
+      - cRLSign
+      - keyCertSign
     common_name: "{{cert_domain_ca}}"
     force: "{{cert_overwrite}}"
   register: ca_csr
